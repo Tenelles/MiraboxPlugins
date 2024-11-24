@@ -58,3 +58,6 @@ compile_commands.json
 build/
 .vscode
 *.swp
+
+# Visual Studio
+.vs
