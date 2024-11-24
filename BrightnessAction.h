@@ -2,7 +2,7 @@
 
 #include "StreamDockSDK/HSDAction.h"
 
-class HSDExampleAction : public HSDAction
+class BrightnessAction : public HSDAction
 {
     using HSDAction::HSDAction;
 

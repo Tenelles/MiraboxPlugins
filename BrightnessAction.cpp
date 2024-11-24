@@ -1,13 +1,13 @@
-#include "HSDExampleAction.h"
+#include "BrightnessAction.h"
 
 #include "StreamDockCPPSDK/StreamDockSDK/NlohmannJSONUtils.h"
 #include "StreamDockCPPSDK/StreamDockSDK/HSDLogger.h"
 
-void HSDExampleAction::DidReceiveSettings(const nlohmann::json& payload) {
+void BrightnessAction::DidReceiveSettings(const nlohmann::json& payload) {
     HSDLogger::LogMessage("DidReceiveSettings");
 }
 
-void HSDExampleAction::KeyDown(const nlohmann::json& payload) {
+void BrightnessAction::KeyDown(const nlohmann::json& payload) {
     HSDLogger::LogMessage("KeyDown");
     if (NlohmannJSONUtils::GetIntByName(payload, "state") == 0) {
         SetState(1);
@@ -17,7 +17,7 @@ void HSDExampleAction::KeyDown(const nlohmann::json& payload) {
     }
 }
 
-void HSDExampleAction::KeyUp(const nlohmann::json& payload) {
+void BrightnessAction::KeyUp(const nlohmann::json& payload) {
     // Log in release and debug builds
     HSDLogger::LogMessage("KeyUp");
     ShowOK();
@@ -26,10 +26,10 @@ void HSDExampleAction::KeyUp(const nlohmann::json& payload) {
     HSDLogger::LogMessage("Settings: " + settings.dump());
 }
 
-void HSDExampleAction::WillAppear(const nlohmann::json& payload) {
+void BrightnessAction::WillAppear(const nlohmann::json& payload) {
     HSDLogger::LogMessage("WillAppear");
 }
 
-void HSDExampleAction::SendToPlugin(const nlohmann::json& payload) {
+void BrightnessAction::SendToPlugin(const nlohmann::json& payload) {
     HSDLogger::LogMessage("Received message from property inspector: " + payload.dump());
 }

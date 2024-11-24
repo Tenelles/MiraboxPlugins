@@ -1,9 +1,9 @@
-#include "HSDExamplePlugin.h"
+#include "PersonalPlugin.h"
 
 #include "StreamDockCPPSDK/StreamDockSDK/NlohmannJSONUtils.h"
 #include "StreamDockCPPSDK/StreamDockSDK/HSDLogger.h"
 
-std::shared_ptr<HSDAction> HSDExamplePlugin::GetOrCreateAction(const std::string& action, const std::string& context)
+std::shared_ptr<HSDAction> PersonalPlugin::GetOrCreateAction(const std::string& action, const std::string& context)
 {
     auto it = mActions.find(context);
     if (it != mActions.end()) {
@@ -12,7 +12,7 @@ std::shared_ptr<HSDAction> HSDExamplePlugin::GetOrCreateAction(const std::string
 
     if (action == "com.hotspot.streamdockcppsdk.demo.myaction1" ||
         action == "com.hotspot.streamdockcppsdk.demo.myaction2") {
-        auto impl = std::make_shared<HSDExampleAction>(
+        auto impl = std::make_shared<BrightnessAction>(
             mConnectionManager,
             action,
             context
@@ -25,7 +25,7 @@ std::shared_ptr<HSDAction> HSDExamplePlugin::GetOrCreateAction(const std::string
     return nullptr;
 }
 
-void HSDExamplePlugin::DidReceiveGlobalSettings(const nlohmann::json& payload)
+void PersonalPlugin::DidReceiveGlobalSettings(const nlohmann::json& payload)
 {
     HSDLogger::LogMessage("Received global settings");
     HSDLogger::LogMessage("Global settings: " + payload.dump());

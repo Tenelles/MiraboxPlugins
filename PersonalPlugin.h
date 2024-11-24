@@ -1,10 +1,12 @@
 #pragma once
 
 #include "StreamDockCPPSDK/StreamDockSDK/HSDPlugin.h"
-#include "HSDExampleAction.h"
+#include "BrightnessAction.h"
 #include <set>
+#include <mutex>
+#include <map>
 
-class HSDExamplePlugin : public HSDPlugin
+class PersonalPlugin : public HSDPlugin
 {
 public:
     using HSDPlugin::HSDPlugin;
@@ -17,6 +19,6 @@ public:
 private:
     std::mutex mVisibleContextsMutex;
     std::set<std::string> mVisibleContexts;
-    std::map<std::string, std::shared_ptr<HSDExampleAction>> mActions;
+    std::map<std::string, std::shared_ptr<BrightnessAction>> mActions;
 };
 
