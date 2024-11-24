@@ -1,36 +1,20 @@
 {
     "Actions": [
         {
-            "Icon": "images/actions/actionIcon1",
-            "Name": "State Display Action1",
+            "Icon": "images/actions/brightnessIcon",
+            "Name": "Brightness",
             "States": [
                 {
-                    "Image": "images/actions/action1DefaultImage_State0"
-                },
-                {
-                    "Image": "images/actions/action1DefaultImage_State1"
+                    "Image": "images/actions/brightnessStateIcon"
                 }
+            ],
+            "Controllers": [
+                "Knob"
             ],
             "SupportedInMultiActions": false,
             "Tooltip": "Display status1",
-            "UUID": "tenelles.personal.myaction1",
-            "PropertyInspectorPath": "action1/index.html"
-        },
-        {
-            "Icon": "images/actions/actionIcon2",
-            "Name": "State Display Action2",
-            "States": [
-                {
-                    "Image": "images/actions/action2DefaultImage_State0"
-                },
-                {
-                    "Image": "images/actions/action2DefaultImage_State1"
-                }
-            ],
-            "SupportedInMultiActions": false,
-            "Tooltip": "Display status2",
-            "UUID": "tenelles.personal.myaction2",
-            "PropertyInspectorPath": "action2/index.html"
+            "UUID": "tenelles.personal.brightness",
+            "PropertyInspectorPath": "brightness/index.html"
         }
     ],
     "SDKVersion": 1,
